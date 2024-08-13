@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  margin: 0px auto;
+  gap: 25px;
+}
+textarea {
+  flex: 1;
+  height: 70vh;
+  resize: none;
+  border: 1px solid #333;
+  padding: 10px;
+  font-size: 20px;
+  outline: none;
+}
+.htmlPanel {
+  flex: 1;
+  padding: 30px;
+  height: 70vh;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: lightgray;
+  overflow: hidden;
+}
