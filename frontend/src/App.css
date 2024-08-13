@@ -11,15 +11,23 @@
   margin: 0px auto;
   gap: 25px;
   width: 100%;
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 100vh;
 }
 textarea {
   flex: 1;
   height: 70vh;
   resize: none;
-  border: 1px solid #333;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
   font-size: 20px;
   outline: none;
+  max-width: 600px;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #333; 
+  border-radius: 10px;
   
 }
 .htmlPanel {
@@ -28,8 +36,13 @@ textarea {
   height: 70vh;
   border: 1px solid #ccc;
   padding: 20px;
-  background-color: lightgray;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
   overflow: hidden;
+  max-width: 600px;
+  word-wrap: break-word;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  
 }
 .error{
   color:red;
