@@ -24,9 +24,7 @@ const MarkdownEditor = () => {
 
     convertFunc();
   }, [markdown]);
-  if (loading) {
-    return <div>Loading ....</div>;
-  }
+
   return (
     <>
       <p className="error">{error}</p>
