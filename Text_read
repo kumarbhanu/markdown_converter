@@ -1,0 +1,28 @@
+import os
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+# Define extracted folder path
+unzipped_folder = "path/to/unzipped/bootstrap"
+
+# Step 1: Read all text-based files (CSS, JS, HTML)
+def read_text_files(directory, allowed_extensions={".css", ".js", ".html"}):
+    all_text = []
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.endswith(tuple(allowed_extensions)):
+                file_path = os.path.join(root, file)
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        all_text.append(f.read())
+                except Exception as e:
+                    print(f"Skipping {file_path}: {e}")  # Handle encoding issues
+    return "\n".join(all_text)  # Combine all text for splitting
+
+# Step 2: Read files and process with RecursiveCharacterTextSplitter
+all_text = read_text_files(unzipped_folder)
+splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+chunks = splitter.split_text(all_text)
+
+# Use `chunks` as needed (e.g., send to an API, process further)
+for i, chunk in enumerate(chunks[:5]):  # Display first 5 chunks for preview
+    print(f"Chunk {i+1}:\n{chunk}\n")
